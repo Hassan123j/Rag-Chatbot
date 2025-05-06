@@ -45,6 +45,7 @@ streamlit run app.py
 
 Project Structure
 .
+
 ├── app.py               # Main Streamlit application
 ├── requirements.txt     # Python dependencies
 └── README.md            # You're here!
