@@ -31,9 +31,8 @@ This project is an AI-powered chatbot built with **LangChain**, **Groq LLM**, an
 
 ## Installation
 
-```bash
-git clone https://github.com/Hassan123j/pdf-chatbot-langchain-groq.git
-cd pdf-chatbot-langchain-groq
+git clone https://github.com/Hassan123j/Rag-Chatbot.git
+cd Rag-Chatbot
 pip install -r requirements.txt
 
 Set your environment variable for Groq API:
