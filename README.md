@@ -1,53 +1,78 @@
-# Rag-Chatbot
- A Streamlit-based AI chatbot that reads PDFs and answers user questions using LangChain, HuggingFace embeddings, Groq LLM, and Retrieval-Augmented Generation (RAG).
+# RAG Chatbot
 
- # PDF Chatbot using LangChain, HuggingFace & Groq
+A simple Streamlit app that lets you query PDF documents using Retrieval-Augmented Generation (RAG). Built with LangChain, Groq LLM, HuggingFace embeddings, and ChromaDB.
 
-This project is an AI-powered chatbot built with **LangChain**, **Groq LLM**, and **Streamlit**, designed to intelligently read a PDF document and answer user queries using the content of that document.
+## Overview
 
-##  Features
+This project enables natural language Q\&A over PDFs. You upload a document, ask questions, and get answers grounded in the content. It uses HuggingFace sentence transformers for embeddings and Groq for fast, low-latency inference.
 
--  Upload and read PDF documents
--  Chunk the document into searchable vectors
--  Retrieve accurate answers using Groq's LLM
--  Uses HuggingFace Embeddings (`all-MiniLM-L12-v2`)
--  Clean and interactive chat UI with Streamlit
--  Environment variable-based API key handling
+**Demo:** [LinkedIn Demo](https://shorturl.at/ClGdo)
 
----
+## Features
 
-## 🛠 Tech Stack
+* PDF upload and parsing
+* Document chunking and vector indexing
+* Semantic search with HuggingFace `all-MiniLM-L12-v2`
+* Context-aware answering via Groq LLM
+* Simple UI built with Streamlit
+* .env-based API key configuration
 
-| Component       | Library/API               |
-|----------------|---------------------------|
-| LLM             | Groq API https://console.groq.com            |
-| Embeddings      | HuggingFace Transformers https://huggingface.co/sentence-transformers/all-MiniLM-L12-v2 |
-| Framework       | LangChain https://www.langchain.com/           |
-| Frontend        | Streamlit https://streamlit.io/                |
-| PDF Parsing     | `PyPDFLoader` from LangChain                      |
-| Vector DB       | `VectorstoreIndexCreator` ChromaDB backend      |
+## Stack
 
----
+* **LLM:** [Groq API](https://console.groq.com)
+* **Embeddings:** [HuggingFace Transformers](https://huggingface.co/sentence-transformers/all-MiniLM-L12-v2)
+* **Framework:** [LangChain](https://www.langchain.com)
+* **Frontend:** [Streamlit](https://streamlit.io)
+* **Vector store:** ChromaDB via LangChain
 
-## Installation
+## Setup
 
+Clone the repo:
+
+```bash
 git clone https://github.com/Hassan123j/Rag-Chatbot.git
 cd Rag-Chatbot
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
-Set your environment variable for Groq API:
+Set your Groq API key:
 
-export GROQ_API_KEY=your_groq_api_key
+```bash
+export GROQ_API_KEY=your_api_key_here
+```
 
- Run the App
+Or use a `.env` file:
 
+```env
+GROQ_API_KEY=your_api_key_here
+```
+
+## Run
+
+```bash
 streamlit run app.py
+```
 
-Project Structure
-.
+This will launch the app in your browser. Upload a PDF and start asking questions.
 
-├── app.py               # Main Streamlit application
-├── requirements.txt     # Python dependencies
-└── README.md            # You're here!
+## Project Structure
 
+```
+Rag-Chatbot/
+├── app.py            # Streamlit frontend
+├── requirements.txt  # Dependencies
+├── .env              # (optional) API key config
+└── README.md         # Project info
+```
+
+## Contributing
+
+Feel free to open issues or submit PRs if you have suggestions or improvements.
+
+---
 
